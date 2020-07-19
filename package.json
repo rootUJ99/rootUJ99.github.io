@@ -1,0 +1,27 @@
+{
+  "name": "rootuj99.github.io",
+  "version": "1.0.0",
+  "description": "portfolio",
+  
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rootUJ99/rootUJ99.github.io.git"
+  },
+  "author": "ujwal arak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rootUJ99/rootUJ99.github.io/issues"
+  },
+  "homepage": "https://github.com/rootUJ99/rootUJ99.github.io#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
