@@ -2,7 +2,7 @@ import React, {useReducer} from 'react'
 import styled from 'styled-components';
 const TerminalArea = styled.div`
   background: #011627;
-  color: red;
+  color: #24a5a0ad;
   width: 80vw;
   height: 80vh;
   border-radius: 0.7rem;
@@ -34,8 +34,23 @@ const Circle = styled.button`
 const InvisibleInput = styled.input`
   background: transparent;
   border: none;
+  width: 0.5rem;
+  outline:none;
+  caret-color: #24a5a0ad;
+`;
+const Pre = styled.div`
+  white-space: pre-wrap;
+  display: inline;
 `;
 
+const PaddedBox = styled.div`
+  padding: 2rem;
+  line-height: 1.8;
+`;
+const UserCol = styled.p`
+  color: #b4bebdad;
+  display: inline;
+`;
 const initialState = {
   intro: true,
   skills: false,
@@ -78,25 +93,43 @@ const Terminal = () => {
           <Circle background="#FFBD2E"/>
           <Circle background="#27C93F"/>
         </TerminalHeader>
-        <pre>
-        {intro && "Holla, my name is Ujwal I'm a Software Engineer from Mumbai currenly working in Symbo Insurance"} 
-        <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{
-          dispatch({type: 'show_skills'})
-        }}/> <br/>
-        {skills && 'JavaScript and Python are the languages which i speak and i know node and django'}
-        <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{
-          dispatch({type: 'show_experiance'})
-        }}/> <br/>
-        {experiance && 'Worked with react redux for making intuitive UI/UX and data intensive applications which includes showing widgets and api integration'}
-        <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{
-          dispatch({type: 'show_personal'})
-        }}/> <br/>
-        {personal && 'Made a anime rating site for self benefit made a simples quora clone'}
-        <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{
-          dispatch({type: 'show_habits'})
-        }}/> <br/>
-        {habits && 'Big anime and manga nerd other than that i love reading books and sometimes little sketching' }
-        </pre>
+        <PaddedBox>
+          {intro && 
+          <>
+          <UserCol>portfolio@ujwal ~ </UserCol>
+          <Pre>Holla, my name is Ujwal Arak I'm a Software Engineer from Mumbai currenly working in Symbo Insurance India</Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_skills'})}}/> <br/>
+          </>
+          }
+          {skills && 
+          <>
+          <UserCol>portfolio@ujwal ~ </UserCol>
+          <Pre>JavaScript and Python are the languages which i speak, frontend with react and backend with django, node-express</Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_experiance'})}}/> <br/>
+          </>
+          }
+          {experiance && 
+          <>
+          <UserCol>portfolio@ujwal ~ </UserCol>
+          <Pre>Worked with react redux for making intuitive UI/UX and data intensive applications which includes showing widgets, api integration and dyanmic forms</Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_personal'})}}/> <br/>
+          </>
+          }
+          {personal && 
+          <>
+          <UserCol>portfolio@ujwal ~ </UserCol>
+          <Pre>Made a Anime Rating Webapp with MERN stack for myself, made a simple quora clone using django</Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_habits'})}}/> <br/>
+          </>
+          }
+          {habits && 
+          <>
+          <UserCol>portfolio@ujwal ~ </UserCol>
+          <Pre>Big anime and manga nerd, other than that i love reading books and sometimes little sketching</Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_habits'})}}/> <br/>
+          </>
+          }
+        </PaddedBox>
       </TerminalArea>
     </TerminalContainer>
   )
