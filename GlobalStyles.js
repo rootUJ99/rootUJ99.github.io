@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
 }
 body {
   /* font-family: 'Noto Sans KR', sans-serif; */
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Fira Code', monospace;
   font-size: clamp(1rem, 1vw, 2rem); 
   margin: 0;
 

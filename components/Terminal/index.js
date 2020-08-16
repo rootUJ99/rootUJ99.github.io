@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const TerminalArea = styled.div`
   background: #011627;
   color: #24a5a0ad;
-  width: 80vw;
+  width: 65vw;
   height: 80vh;
   border-radius: 0.7rem;
 `;
