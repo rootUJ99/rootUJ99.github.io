@@ -29460,7 +29460,7 @@ try {
   const TerminalArea = _c = _styledComponents.default.div`
   background: #011627;
   color: #24a5a0ad;
-  width: 80vw;
+  width: 65vw;
   height: 80vh;
   border-radius: 0.7rem;
 `;
@@ -33070,7 +33070,7 @@ const GlobalStyles = (0, _styledComponents.createGlobalStyle)`
 }
 body {
   /* font-family: 'Noto Sans KR', sans-serif; */
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Fira Code', monospace;
   font-size: clamp(1rem, 1vw, 2rem); 
   margin: 0;
 
