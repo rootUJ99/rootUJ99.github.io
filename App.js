@@ -1,12 +1,26 @@
 import React from 'react'
 import Terminal from './components/Terminal';
+import Profile from './components/Profile';
 import GlobalStyles from './GlobalStyles';
-
+import styled from 'styled-components';
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  grid-gap: 1fr;
+  justify-content: center;
+  padding: 2rem;
+  background: #242730;
+  width: 100%;
+  height: 100vh;
+`;
 const App = () => {
   return (
     <>
       <GlobalStyles/>
-      <Terminal/>
+      <Wrapper>
+        <Profile/>
+        <Terminal/>
+      </Wrapper>
     </>
   )
 }

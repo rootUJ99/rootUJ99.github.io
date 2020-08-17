@@ -86,7 +86,7 @@ const Terminal = () => {
     habits,
   }, dispatch] = useReducer(reducer, initialState)
   return (
-    <TerminalContainer>
+    // <TerminalContainer>
       <TerminalArea>
         <TerminalHeader>
           <Circle background="#FF5F56"/>
@@ -131,7 +131,7 @@ const Terminal = () => {
           }
         </PaddedBox>
       </TerminalArea>
-    </TerminalContainer>
+    // </TerminalContainer>
   )
 }
 
