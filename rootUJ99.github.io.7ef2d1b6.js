@@ -986,6 +986,33 @@ function hmrAcceptRun(bundle, id) {
 
   acceptedAssets[id] = true;
 }
+},{}],"4e236204584c5e0a4f04619e847ec641":[function(require,module,exports) {
+require('./bundle-manifest').register(JSON.parse("{\"5225f0fee2e1187f\":\"rootUJ99.github.io.7ef2d1b6.js\",\"0b27b2158c27a0c3\":\"profile.a9764082.jpg\",\"ecefbca0c17a168d\":\"insta.5b24f6dd.svg\",\"7d486ffcdd2bbe2e\":\"twitter.a38ed03a.svg\",\"a4354a841c505e2e\":\"github.84555f48.svg\"}"));
+},{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"ba8df6b71e73837c465d69bebde6e64d":[function(require,module,exports) {
+"use strict";
+
+var mapping = {};
+
+function register(pairs) {
+  var keys = Object.keys(pairs);
+
+  for (var i = 0; i < keys.length; i++) {
+    mapping[keys[i]] = pairs[keys[i]];
+  }
+}
+
+function resolve(id) {
+  var resolved = mapping[id];
+
+  if (resolved == null) {
+    throw new Error('Could not resolve bundle with id ' + id);
+  }
+
+  return resolved;
+}
+
+module.exports.register = register;
+module.exports.resolve = resolve;
 },{}],"eb397b394ebff17b5f4b9224cf897db4":[function(require,module,exports) {
 "use strict";
 
@@ -29203,43 +29230,73 @@ try {
 
   var _Terminal = _interopRequireDefault(require("./components/Terminal"));
 
+  var _Profile = _interopRequireDefault(require("./components/Profile"));
+
   var _GlobalStyles = _interopRequireDefault(require("./GlobalStyles"));
+
+  var _styledComponents = _interopRequireDefault(require("styled-components"));
 
   var _jsxFileName = "/Users/ujwal/Desktop/UJwal/projects/rootUJ99.github.io/App.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  const Wrapper = _c = _styledComponents.default.div`
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  grid-gap: 1fr;
+  justify-content: center;
+  padding: 2rem;
+  background: #242730;
+  width: 100%;
+  height: 100vh;
+`;
 
   const App = () => {
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_GlobalStyles.default, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8,
+        lineNumber: 19,
         columnNumber: 7
+      }
+    }), /*#__PURE__*/_react.default.createElement(Wrapper, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/_react.default.createElement(_Profile.default, {
+      __self: void 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 9
       }
     }), /*#__PURE__*/_react.default.createElement(_Terminal.default, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9,
-        columnNumber: 7
+        lineNumber: 22,
+        columnNumber: 9
       }
-    }));
+    })));
   };
 
-  _c = App;
+  _c2 = App;
   var _default = App;
   exports.default = _default;
 
-  var _c;
+  var _c, _c2;
 
-  $RefreshReg$(_c, "App");
+  $RefreshReg$(_c, "Wrapper");
+  $RefreshReg$(_c2, "App");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","./node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","./components/Terminal":"58da5b2e1b78afc174c4c7fe641400d2","./GlobalStyles":"81677cc8c12dc327a6efacbe300c3562"}],"304bfcdf97c182c258933a329c4fc1cd":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","./node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","./components/Terminal":"58da5b2e1b78afc174c4c7fe641400d2","./GlobalStyles":"81677cc8c12dc327a6efacbe300c3562","styled-components":"00f29180361410c43755b2aab57c93df","./components/Profile":"534dd232b83d683b5dfb0c5b0ec6e830"}],"304bfcdf97c182c258933a329c4fc1cd":[function(require,module,exports) {
 "use strict";
 
 var Refresh = require('react-refresh/runtime');
@@ -29464,13 +29521,13 @@ try {
   height: 80vh;
   border-radius: 0.7rem;
 `;
-  const TerminalContainer = _c2 = _styledComponents.default.div`
+  const TerminalContainer = _styledComponents.default.div`
   background: black;
   height: 100%;
   display: grid;
   place-content: center;
 `;
-  const TerminalHeader = _c3 = _styledComponents.default.div`
+  const TerminalHeader = _c2 = _styledComponents.default.div`
   width: inherit;
   height: 2rem;
   /* background: blue; */
@@ -29478,7 +29535,7 @@ try {
   align-items: center;
   padding: 1rem 1rem 0.5rem 1rem;
 `;
-  const Circle = _c4 = _styledComponents.default.button`
+  const Circle = _c3 = _styledComponents.default.button`
   background: ${props => props.background || 'white'};
   border-radius: 50%;
   width: 1rem;
@@ -29486,22 +29543,22 @@ try {
   margin: 0.2rem;
   border: none;
 `;
-  const InvisibleInput = _c5 = _styledComponents.default.input`
+  const InvisibleInput = _c4 = _styledComponents.default.input`
   background: transparent;
   border: none;
   width: 0.5rem;
   outline:none;
   caret-color: #24a5a0ad;
 `;
-  const Pre = _c6 = _styledComponents.default.div`
+  const Pre = _c5 = _styledComponents.default.div`
   white-space: pre-wrap;
   display: inline;
 `;
-  const PaddedBox = _c7 = _styledComponents.default.div`
+  const PaddedBox = _c6 = _styledComponents.default.div`
   padding: 2rem;
   line-height: 1.8;
 `;
-  const UserCol = _c8 = _styledComponents.default.p`
+  const UserCol = _c7 = _styledComponents.default.p`
   color: #b4bebdad;
   display: inline;
 `;
@@ -29556,253 +29613,250 @@ try {
       personal,
       habits
     }, dispatch] = (0, _react.useReducer)(reducer, initialState);
-    return /*#__PURE__*/_react.default.createElement(TerminalContainer, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89,
-        columnNumber: 5
-      }
-    }, /*#__PURE__*/_react.default.createElement(TerminalArea, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 90,
-        columnNumber: 7
-      }
-    }, /*#__PURE__*/_react.default.createElement(TerminalHeader, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91,
-        columnNumber: 9
-      }
-    }, /*#__PURE__*/_react.default.createElement(Circle, {
-      background: "#FF5F56",
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92,
-        columnNumber: 11
-      }
-    }), /*#__PURE__*/_react.default.createElement(Circle, {
-      background: "#FFBD2E",
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93,
-        columnNumber: 11
-      }
-    }), /*#__PURE__*/_react.default.createElement(Circle, {
-      background: "#27C93F",
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 94,
-        columnNumber: 11
-      }
-    })), /*#__PURE__*/_react.default.createElement(PaddedBox, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 96,
-        columnNumber: 9
-      }
-    }, intro && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 99,
-        columnNumber: 11
-      }
-    }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 100,
-        columnNumber: 11
-      }
-    }, "Holla, my name is Ujwal Arak I'm a Software Engineer from Mumbai currenly working in Symbo Insurance India"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-      name: "ignore-input",
-      autoFocus: true,
-      onKeyPress: () => {
-        dispatch({
-          type: 'show_skills'
-        });
-      },
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101,
-        columnNumber: 11
-      }
-    }), " ", /*#__PURE__*/_react.default.createElement("br", {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101,
-        columnNumber: 109
-      }
-    })), skills && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106,
-        columnNumber: 11
-      }
-    }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 107,
-        columnNumber: 11
-      }
-    }, "JavaScript and Python are the languages which i speak, frontend with react and backend with django, node-express"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-      name: "ignore-input",
-      autoFocus: true,
-      onKeyPress: () => {
-        dispatch({
-          type: 'show_experiance'
-        });
-      },
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 108,
-        columnNumber: 11
-      }
-    }), " ", /*#__PURE__*/_react.default.createElement("br", {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 108,
-        columnNumber: 113
-      }
-    })), experiance && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 113,
-        columnNumber: 11
-      }
-    }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 114,
-        columnNumber: 11
-      }
-    }, "Worked with react redux for making intuitive UI/UX and data intensive applications which includes showing widgets, api integration and dyanmic forms"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-      name: "ignore-input",
-      autoFocus: true,
-      onKeyPress: () => {
-        dispatch({
-          type: 'show_personal'
-        });
-      },
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 115,
-        columnNumber: 11
-      }
-    }), " ", /*#__PURE__*/_react.default.createElement("br", {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 115,
-        columnNumber: 111
-      }
-    })), personal && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 120,
-        columnNumber: 11
-      }
-    }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 121,
-        columnNumber: 11
-      }
-    }, "Made a Anime Rating Webapp with MERN stack for myself, made a simple quora clone using django"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-      name: "ignore-input",
-      autoFocus: true,
-      onKeyPress: () => {
-        dispatch({
-          type: 'show_habits'
-        });
-      },
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 122,
-        columnNumber: 11
-      }
-    }), " ", /*#__PURE__*/_react.default.createElement("br", {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 122,
-        columnNumber: 109
-      }
-    })), habits && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 127,
-        columnNumber: 11
-      }
-    }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 128,
-        columnNumber: 11
-      }
-    }, "Big anime and manga nerd, other than that i love reading books and sometimes little sketching"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-      name: "ignore-input",
-      autoFocus: true,
-      onKeyPress: () => {
-        dispatch({
-          type: 'show_habits'
-        });
-      },
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 129,
-        columnNumber: 11
-      }
-    }), " ", /*#__PURE__*/_react.default.createElement("br", {
-      __self: void 0,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 129,
-        columnNumber: 109
-      }
-    })))));
+    return (
+      /*#__PURE__*/
+      // <TerminalContainer>
+      _react.default.createElement(TerminalArea, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_react.default.createElement(TerminalHeader, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_react.default.createElement(Circle, {
+        background: "#FF5F56",
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92,
+          columnNumber: 11
+        }
+      }), /*#__PURE__*/_react.default.createElement(Circle, {
+        background: "#FFBD2E",
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93,
+          columnNumber: 11
+        }
+      }), /*#__PURE__*/_react.default.createElement(Circle, {
+        background: "#27C93F",
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94,
+          columnNumber: 11
+        }
+      })), /*#__PURE__*/_react.default.createElement(PaddedBox, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96,
+          columnNumber: 9
+        }
+      }, intro && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100,
+          columnNumber: 11
+        }
+      }, "Holla, my name is Ujwal Arak I'm a Software Engineer from Mumbai currenly working in Symbo Insurance India"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_skills'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101,
+          columnNumber: 109
+        }
+      })), skills && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107,
+          columnNumber: 11
+        }
+      }, "JavaScript and Python are the languages which i speak, frontend with react and backend with django, node-express"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_experiance'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108,
+          columnNumber: 113
+        }
+      })), experiance && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114,
+          columnNumber: 11
+        }
+      }, "Worked with react redux for making intuitive UI/UX and data intensive applications which includes showing widgets, api integration and dyanmic forms"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_personal'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115,
+          columnNumber: 111
+        }
+      })), personal && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121,
+          columnNumber: 11
+        }
+      }, "Made a Anime Rating Webapp with MERN stack for myself, made a simple quora clone using django"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_habits'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122,
+          columnNumber: 109
+        }
+      })), habits && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128,
+          columnNumber: 11
+        }
+      }, "Big anime and manga nerd, other than that i love reading books and sometimes little sketching"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_habits'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129,
+          columnNumber: 109
+        }
+      })))) // </TerminalContainer>
+
+    );
   };
 
   _s(Terminal, "PWCWYqrQ6tTPLzPSoQ6sPnK86DE=");
 
-  _c9 = Terminal;
+  _c8 = Terminal;
   var _default = Terminal;
   exports.default = _default;
 
-  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9;
+  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8;
 
   $RefreshReg$(_c, "TerminalArea");
-  $RefreshReg$(_c2, "TerminalContainer");
-  $RefreshReg$(_c3, "TerminalHeader");
-  $RefreshReg$(_c4, "Circle");
-  $RefreshReg$(_c5, "InvisibleInput");
-  $RefreshReg$(_c6, "Pre");
-  $RefreshReg$(_c7, "PaddedBox");
-  $RefreshReg$(_c8, "UserCol");
-  $RefreshReg$(_c9, "Terminal");
+  $RefreshReg$(_c2, "TerminalHeader");
+  $RefreshReg$(_c3, "Circle");
+  $RefreshReg$(_c4, "InvisibleInput");
+  $RefreshReg$(_c5, "Pre");
+  $RefreshReg$(_c6, "PaddedBox");
+  $RefreshReg$(_c7, "UserCol");
+  $RefreshReg$(_c8, "Terminal");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
@@ -33078,6 +33132,269 @@ body {
 `;
 var _default = GlobalStyles;
 exports.default = _default;
-},{"styled-components":"00f29180361410c43755b2aab57c93df"}]},{},["64c1770b35b04eb343009bb27a752262","dd675bf57948b67d0f9ff864431e3b2f","eb397b394ebff17b5f4b9224cf897db4"], null)
+},{"styled-components":"00f29180361410c43755b2aab57c93df"}],"534dd232b83d683b5dfb0c5b0ec6e830":[function(require,module,exports) {
+"use strict";
+
+var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(require("react"));
+
+  var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+  var _profile = _interopRequireDefault(require("url:../../assets/profile.jpg"));
+
+  var _insta = _interopRequireDefault(require("url:../../assets/insta.svg"));
+
+  var _twitter = _interopRequireDefault(require("url:../../assets/twitter.svg"));
+
+  var _github = _interopRequireDefault(require("url:../../assets/github.svg"));
+
+  var _jsxFileName = "/Users/ujwal/Desktop/UJwal/projects/rootUJ99.github.io/components/Profile/index.js";
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  const Container = _c = _styledComponents.default.div`
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 0.3fr 1fr;
+`;
+  const Image = _c2 = _styledComponents.default.img`
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  object-fit: cover;
+`;
+  const Description = _c3 = _styledComponents.default.div`
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.2rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background: #434753;
+`;
+  const Icon = _c4 = _styledComponents.default.img`
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  :hover {
+    transform: scale(1.2);
+  }
+`;
+
+  function Profile() {
+    return /*#__PURE__*/_react.default.createElement(Container, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43,
+        columnNumber: 5
+      }
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 7
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/_react.default.createElement(Image, {
+      src: _profile.default,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46,
+        columnNumber: 7
+      }
+    }), /*#__PURE__*/_react.default.createElement(Description, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/_react.default.createElement(Icon, {
+      src: _insta.default,
+      onClick: () => window.open('https://www.instagram.com/rootuj/'),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48,
+        columnNumber: 9
+      }
+    }), /*#__PURE__*/_react.default.createElement(Icon, {
+      src: _twitter.default,
+      onClick: () => window.open('https://twitter.com/rootuj99/'),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49,
+        columnNumber: 9
+      }
+    }), /*#__PURE__*/_react.default.createElement(Icon, {
+      src: _github.default,
+      onClick: () => window.open('https://github.com/rootUJ99/'),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50,
+        columnNumber: 9
+      }
+    }))));
+  }
+
+  _c5 = Profile;
+  var _default = Profile;
+  exports.default = _default;
+
+  var _c, _c2, _c3, _c4, _c5;
+
+  $RefreshReg$(_c, "Container");
+  $RefreshReg$(_c2, "Image");
+  $RefreshReg$(_c3, "Description");
+  $RefreshReg$(_c4, "Icon");
+  $RefreshReg$(_c5, "Profile");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","url:../../assets/profile.jpg":"ed2781b2b87c0ed0ddaae500a9c30c02","url:../../assets/insta.svg":"eae1e79ffe5dc9fe56a87fe5804f4ee1","url:../../assets/twitter.svg":"44651bfcdadeba2f8196cb5961ec66b6","url:../../assets/github.svg":"a5738d8f61e6ea11728cc51987445c27"}],"ed2781b2b87c0ed0ddaae500a9c30c02":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "0b27b2158c27a0c3");
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"2146da1905b95151ed14d455c784e7b7":[function(require,module,exports) {
+"use strict";
+
+/* globals document:readonly */
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+
+
+function getOrigin(url) {
+  let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+
+  if (!matches) {
+    throw new Error('Origin not found');
+  }
+
+  return matches[0];
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+},{}],"1b9943ef25c7bbdf0dd1b9fa91880a6c":[function(require,module,exports) {
+"use strict";
+
+var resolve = require('./bundle-manifest').resolve;
+
+module.exports = function (fromId, toId) {
+  return relative(dirname(resolve(fromId)), resolve(toId));
+};
+
+function dirname(_filePath) {
+  if (_filePath === '') {
+    return '.';
+  }
+
+  var filePath = _filePath[_filePath.length - 1] === '/' ? _filePath.slice(0, _filePath.length - 1) : _filePath;
+  var slashIndex = filePath.lastIndexOf('/');
+  return slashIndex === -1 ? '.' : filePath.slice(0, slashIndex);
+}
+
+function relative(from, to) {
+  if (from === to) {
+    return '';
+  }
+
+  var fromParts = from.split('/');
+
+  if (fromParts[0] === '.') {
+    fromParts.shift();
+  }
+
+  var toParts = to.split('/');
+
+  if (toParts[0] === '.') {
+    toParts.shift();
+  } // Find where path segments diverge.
+
+
+  var i;
+  var divergeIndex;
+
+  for (i = 0; (i < toParts.length || i < fromParts.length) && divergeIndex == null; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      divergeIndex = i;
+    }
+  } // If there are segments from "from" beyond the point of divergence,
+  // return back up the path to that point using "..".
+
+
+  var parts = [];
+
+  for (i = 0; i < fromParts.length - divergeIndex; i++) {
+    parts.push('..');
+  } // If there are segments from "to" beyond the point of divergence,
+  // continue using the remaining segments.
+
+
+  if (toParts.length > divergeIndex) {
+    parts.push.apply(parts, toParts.slice(divergeIndex));
+  }
+
+  return parts.join('/');
+}
+
+module.exports._dirname = dirname;
+module.exports._relative = relative;
+},{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"eae1e79ffe5dc9fe56a87fe5804f4ee1":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "ecefbca0c17a168d");
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"44651bfcdadeba2f8196cb5961ec66b6":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "7d486ffcdd2bbe2e");
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"a5738d8f61e6ea11728cc51987445c27":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "a4354a841c505e2e");
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}]},{},["64c1770b35b04eb343009bb27a752262","dd675bf57948b67d0f9ff864431e3b2f","4e236204584c5e0a4f04619e847ec641","eb397b394ebff17b5f4b9224cf897db4"], null)
 
 //# sourceMappingURL=rootUJ99.github.io.7ef2d1b6.js.map
