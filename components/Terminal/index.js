@@ -6,6 +6,7 @@ const TerminalArea = styled.div`
   width: 65vw;
   height: 80vh;
   border-radius: 0.7rem;
+  box-shadow: 20px 20px 0px 1px rgba(0,0,0,0.75);
 `;
 const TerminalContainer = styled.div`
   background: black;

@@ -21,10 +21,12 @@ const Image = styled.img`
 const Description = styled.div`
   display: flex;
   justify-content: space-evenly;
-  padding: 0.2rem;
+  padding: 0.3rem;
   margin-top: 1rem;
   border-radius: 1rem;
   background: #434753;
+  box-shadow: 7px 10px 0px 1px rgba(0,0,0,0.75);
+
 `;
 
 const Icon = styled.img`

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 0.7fr 1fr;
-  grid-gap: 1fr;
+  grid-gap: 1rem;
   justify-content: center;
   padding: 2rem;
   background: #242730;
