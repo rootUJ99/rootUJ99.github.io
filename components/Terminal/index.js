@@ -7,12 +7,9 @@ const TerminalArea = styled.div`
   height: 80vh;
   border-radius: 0.7rem;
   box-shadow: 20px 20px 0px 1px rgba(0,0,0,0.75);
-`;
-const TerminalContainer = styled.div`
-  background: black;
-  height: 100%;
-  display: grid;
-  place-content: center;
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 const TerminalHeader = styled.div`
@@ -23,6 +20,7 @@ const TerminalHeader = styled.div`
   align-items: center;
   padding: 1rem 1rem 0.5rem 1rem;
 `;
+
 const Circle = styled.button`
   background: ${props => props.background || 'white'};
   border-radius: 50%;

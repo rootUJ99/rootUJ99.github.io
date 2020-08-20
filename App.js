@@ -12,6 +12,10 @@ const Wrapper = styled.div`
   background: #242730;
   width: 100%;
   height: 100vh;
+  @media (max-width: 640px) {
+    grid-template-rows: 1fr;
+    grid-template-columns: none;
+  }
 `;
 const App = () => {
   return (
