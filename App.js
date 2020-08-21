@@ -11,10 +11,12 @@ const Wrapper = styled.div`
   padding: 2rem;
   background: #242730;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   @media (max-width: 640px) {
     grid-template-rows: 1fr;
     grid-template-columns: none;
+    height: auto;
+
   }
 `;
 const App = () => {
