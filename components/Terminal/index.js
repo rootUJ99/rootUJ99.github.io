@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react'
+import React, {useReducer, useEffect} from 'react'
 import styled from 'styled-components';
 const TerminalArea = styled.div`
   background: #011627;
@@ -11,6 +11,11 @@ const TerminalArea = styled.div`
   @media (max-width: 640px) {
     width: 100%;
   }
+`;
+const HightLight = styled.span`
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #877c3e;
 `;
 
 const TerminalHeader = styled.div`
@@ -51,12 +56,16 @@ const UserCol = styled.p`
   color: #b4bebdad;
   display: inline;
 `;
+const LineBlocks = styled.div`
+  margin-bottom: 1rem;
+`;
 const initialState = {
   intro: true,
   skills: false,
   experiance: false,
   personal: false,
-  habits: false,
+  hobbies: false,
+  newLearnings: false,
   contact: false,
 }
 
@@ -68,8 +77,10 @@ const reducer = (state, action) => {
       return {...state, experiance : true}
     case 'show_personal': 
       return {...state, personal : true}
-    case 'show_habits': 
-      return {...state, habits : true}
+    case 'show_hobbies': 
+      return {...state, hobbies : true}
+    case 'show_newLearnings': 
+      return {...state, newLearnings : true}
     case 'show_contact': 
       return {...state, contact : true}
     default:
@@ -83,7 +94,8 @@ const Terminal = () => {
     skills,
     experiance,
     personal,
-    habits,
+    newLearnings,
+    hobbies,
   }, dispatch] = useReducer(reducer, initialState)
   return (
     // <TerminalContainer>
@@ -95,39 +107,57 @@ const Terminal = () => {
         </TerminalHeader>
         <PaddedBox>
           {intro && 
-          <>
+          <LineBlocks>
           <UserCol>portfolio@ujwal ~ </UserCol>
-          <Pre>Holla, my name is Ujwal Arak I'm a Software Engineer from Mumbai currenly working in Symbo Insurance India</Pre>
+          <Pre>Hey there, my name is 
+            <HightLight>Ujwal Arak</HightLight>currently working as a Software Engineer in Symbo Insurance based in Mumbai</Pre>
           <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_skills'})}}/> <br/>
-          </>
+          </LineBlocks>
           }
           {skills && 
-          <>
+          <LineBlocks>
           <UserCol>portfolio@ujwal ~ </UserCol>
-          <Pre>JavaScript and Python are the languages which i speak, frontend with react and backend with django, node-express</Pre>
+          <Pre>I hold knowledge in
+            <HightLight>Javascript and Python</HightLight>
+             with frameworks like 
+            <HightLight>React, Django and Node/Express</HightLight></Pre>
           <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_experiance'})}}/> <br/>
-          </>
+          </LineBlocks>
           }
           {experiance && 
-          <>
+          <LineBlocks>
           <UserCol>portfolio@ujwal ~ </UserCol>
-          <Pre>Worked with react redux for making intuitive UI/UX and data intensive applications which includes showing widgets, api integration and dyanmic forms</Pre>
+          <Pre>I have Worked with 
+            <HightLight>React Redux</HightLight>for making intuitive UI/UX with data intensive applications which includes showing widgets, API integrations and dyanmic forms</Pre>
           <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_personal'})}}/> <br/>
-          </>
+          </LineBlocks>
           }
           {personal && 
-          <>
+          <LineBlocks>
           <UserCol>portfolio@ujwal ~ </UserCol>
-          <Pre>Made a Anime Rating Webapp with MERN stack for myself, made a simple quora clone using django</Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_habits'})}}/> <br/>
-          </>
+          <Pre>I've made some personal projects such as an Anime Rating Webapp with 
+          <HightLight>MERN stack</HightLight>
+            for personal use and simple quora clone using <HightLight>Django and Vue</HightLight></Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_newLearnings'})}}/> <br/>
+          </LineBlocks>
           }
-          {habits && 
-          <>
+          {newLearnings && 
+          <LineBlocks>
           <UserCol>portfolio@ujwal ~ </UserCol>
-          <Pre>Big anime and manga nerd, other than that i love reading books and sometimes little sketching</Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_habits'})}}/> <br/>
-          </>
+          <Pre>I try to learn new things on regular basis for now I'm targeting Applied Machine Learning with
+          <HightLight>Tensorflow</HightLight>
+             and Cross Platform App Development using 
+             <HightLight>Flutter</HightLight>
+             </Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_hobbies'})}}/> <br/>
+          </LineBlocks>
+          }
+          {hobbies && 
+          <LineBlocks>
+          <UserCol>portfolio@ujwal ~ </UserCol>
+          <Pre>Other than that I'm a big Anime and Manga nerd, who also enjoys reading books and sometimes little bit of sketching</Pre>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_hobbies'})}}/> <br/>
+          </LineBlocks>
           }
         </PaddedBox>
       </TerminalArea>
