@@ -29532,7 +29532,12 @@ try {
     width: 100%;
   }
 `;
-  const TerminalHeader = _c2 = _styledComponents.default.div`
+  const HightLight = _c2 = _styledComponents.default.span`
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #877c3e;
+`;
+  const TerminalHeader = _c3 = _styledComponents.default.div`
   width: inherit;
   height: 2rem;
   /* background: blue; */
@@ -29540,7 +29545,7 @@ try {
   align-items: center;
   padding: 1rem 1rem 0.5rem 1rem;
 `;
-  const Circle = _c3 = _styledComponents.default.button`
+  const Circle = _c4 = _styledComponents.default.button`
   background: ${props => props.background || 'white'};
   border-radius: 50%;
   width: 1rem;
@@ -29548,31 +29553,35 @@ try {
   margin: 0.2rem;
   border: none;
 `;
-  const InvisibleInput = _c4 = _styledComponents.default.input`
+  const InvisibleInput = _c5 = _styledComponents.default.input`
   background: transparent;
   border: none;
   width: 0.5rem;
   outline:none;
   caret-color: #24a5a0ad;
 `;
-  const Pre = _c5 = _styledComponents.default.div`
+  const Pre = _c6 = _styledComponents.default.div`
   white-space: pre-wrap;
   display: inline;
 `;
-  const PaddedBox = _c6 = _styledComponents.default.div`
+  const PaddedBox = _c7 = _styledComponents.default.div`
   padding: 2rem;
   line-height: 1.8;
 `;
-  const UserCol = _c7 = _styledComponents.default.p`
+  const UserCol = _c8 = _styledComponents.default.p`
   color: #b4bebdad;
   display: inline;
+`;
+  const LineBlocks = _c9 = _styledComponents.default.div`
+  margin-bottom: 1rem;
 `;
   const initialState = {
     intro: true,
     skills: false,
     experiance: false,
     personal: false,
-    habits: false,
+    hobbies: false,
+    newLearnings: false,
     contact: false
   };
 
@@ -29593,9 +29602,14 @@ try {
           personal: true
         };
 
-      case 'show_habits':
+      case 'show_hobbies':
         return { ...state,
-          habits: true
+          hobbies: true
+        };
+
+      case 'show_newLearnings':
+        return { ...state,
+          newLearnings: true
         };
 
       case 'show_contact':
@@ -29616,7 +29630,8 @@ try {
       skills,
       experiance,
       personal,
-      habits
+      newLearnings,
+      hobbies
     }, dispatch] = (0, _react.useReducer)(reducer, initialState);
     return (
       /*#__PURE__*/
@@ -29625,14 +29640,14 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 102,
           columnNumber: 7
         }
       }, /*#__PURE__*/_react.default.createElement(TerminalHeader, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91,
+          lineNumber: 103,
           columnNumber: 9
         }
       }, /*#__PURE__*/_react.default.createElement(Circle, {
@@ -29640,7 +29655,7 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92,
+          lineNumber: 104,
           columnNumber: 11
         }
       }), /*#__PURE__*/_react.default.createElement(Circle, {
@@ -29648,7 +29663,7 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93,
+          lineNumber: 105,
           columnNumber: 11
         }
       }), /*#__PURE__*/_react.default.createElement(Circle, {
@@ -29656,31 +29671,45 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94,
+          lineNumber: 106,
           columnNumber: 11
         }
       })), /*#__PURE__*/_react.default.createElement(PaddedBox, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96,
+          lineNumber: 108,
           columnNumber: 9
         }
-      }, intro && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+      }, intro && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99,
+          lineNumber: 110,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100,
+          lineNumber: 112,
           columnNumber: 11
         }
-      }, "Holla, my name is Ujwal Arak I'm a Software Engineer from Mumbai currenly working in Symbo Insurance India"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+      }, "Hey there, my name is", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113,
+          columnNumber: 13
+        }
+      }, "Ujwal Arak"), "currently working as a Software Engineer in Symbo Insurance based in Mumbai"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
         name: "ignore-input",
         autoFocus: true,
         onKeyPress: () => {
@@ -29691,31 +29720,52 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101,
+          lineNumber: 114,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101,
+          lineNumber: 114,
           columnNumber: 109
         }
-      })), skills && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+      })), skills && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 106,
+          lineNumber: 118,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107,
+          lineNumber: 120,
           columnNumber: 11
         }
-      }, "JavaScript and Python are the languages which i speak, frontend with react and backend with django, node-express"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+      }, "I hold knowledge in", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121,
+          columnNumber: 13
+        }
+      }, "Javascript and Python"), "with frameworks like", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 123,
+          columnNumber: 13
+        }
+      }, "React, Django and Node/Express")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
         name: "ignore-input",
         autoFocus: true,
         onKeyPress: () => {
@@ -29726,31 +29776,45 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108,
+          lineNumber: 124,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108,
+          lineNumber: 124,
           columnNumber: 113
         }
-      })), experiance && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+      })), experiance && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113,
+          lineNumber: 128,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114,
+          lineNumber: 130,
           columnNumber: 11
         }
-      }, "Worked with react redux for making intuitive UI/UX and data intensive applications which includes showing widgets, api integration and dyanmic forms"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+      }, "I have Worked with", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 131,
+          columnNumber: 13
+        }
+      }, "React Redux"), "for making intuitive UI/UX with data intensive applications which includes showing widgets, API integrations and dyanmic forms"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
         name: "ignore-input",
         autoFocus: true,
         onKeyPress: () => {
@@ -29761,107 +29825,193 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115,
+          lineNumber: 132,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115,
+          lineNumber: 132,
           columnNumber: 111
         }
-      })), personal && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+      })), personal && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120,
+          lineNumber: 136,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 137,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121,
+          lineNumber: 138,
           columnNumber: 11
         }
-      }, "Made a Anime Rating Webapp with MERN stack for myself, made a simple quora clone using django"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+      }, "I've made some personal projects such as an Anime Rating Webapp with", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139,
+          columnNumber: 11
+        }
+      }, "MERN stack"), "for personal use and simple quora clone using ", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140,
+          columnNumber: 59
+        }
+      }, "Django and Vue")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
         name: "ignore-input",
         autoFocus: true,
         onKeyPress: () => {
           dispatch({
-            type: 'show_habits'
+            type: 'show_newLearnings'
           });
         },
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122,
+          lineNumber: 141,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122,
-          columnNumber: 109
+          lineNumber: 141,
+          columnNumber: 115
         }
-      })), habits && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(UserCol, {
+      })), newLearnings && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127,
+          lineNumber: 145,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 146,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128,
+          lineNumber: 147,
           columnNumber: 11
         }
-      }, "Big anime and manga nerd, other than that i love reading books and sometimes little sketching"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+      }, "I try to learn new things on regular basis for now I'm targeting Applied Machine Learning with", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148,
+          columnNumber: 11
+        }
+      }, "Tensorflow"), "and Cross Platform App Development using", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 150,
+          columnNumber: 14
+        }
+      }, "Flutter")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
         name: "ignore-input",
         autoFocus: true,
         onKeyPress: () => {
           dispatch({
-            type: 'show_habits'
+            type: 'show_hobbies'
           });
         },
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129,
+          lineNumber: 152,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129,
-          columnNumber: 109
+          lineNumber: 152,
+          columnNumber: 110
+        }
+      })), hobbies && /*#__PURE__*/_react.default.createElement(LineBlocks, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 156,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 157,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 158,
+          columnNumber: 11
+        }
+      }, "Other than that I'm a big Anime and Manga nerd, who also enjoys reading books and sometimes little bit of sketching"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_hobbies'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 159,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 159,
+          columnNumber: 110
         }
       })))) // </TerminalContainer>
 
     );
   };
 
-  _s(Terminal, "PWCWYqrQ6tTPLzPSoQ6sPnK86DE=");
+  _s(Terminal, "QUkhWkaCqojVlxkn9/4nSXKI4z4=");
 
-  _c8 = Terminal;
+  _c10 = Terminal;
   var _default = Terminal;
   exports.default = _default;
 
-  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8;
+  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10;
 
   $RefreshReg$(_c, "TerminalArea");
-  $RefreshReg$(_c2, "TerminalHeader");
-  $RefreshReg$(_c3, "Circle");
-  $RefreshReg$(_c4, "InvisibleInput");
-  $RefreshReg$(_c5, "Pre");
-  $RefreshReg$(_c6, "PaddedBox");
-  $RefreshReg$(_c7, "UserCol");
-  $RefreshReg$(_c8, "Terminal");
+  $RefreshReg$(_c2, "HightLight");
+  $RefreshReg$(_c3, "TerminalHeader");
+  $RefreshReg$(_c4, "Circle");
+  $RefreshReg$(_c5, "InvisibleInput");
+  $RefreshReg$(_c6, "Pre");
+  $RefreshReg$(_c7, "PaddedBox");
+  $RefreshReg$(_c8, "UserCol");
+  $RefreshReg$(_c9, "LineBlocks");
+  $RefreshReg$(_c10, "Terminal");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
