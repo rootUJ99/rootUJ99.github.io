@@ -68,6 +68,17 @@ const initialState = {
   newLearnings: false,
   contact: false,
 }
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+`;
+const Button = styled.button`
+  background: #434753;
+  color: #b4bebdad;
+  border: none;
+  margin-right: 0.2rem;
+  border-radius: 0.2rem;
+`;
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -105,14 +116,14 @@ const Terminal = () => {
           <Circle background="#FFBD2E"/>
           <Circle background="#27C93F"/>
         </TerminalHeader>
-        <>
-          <button>
+        <ButtonContainer>
+          <Button>
             skip
-          </button>
-          <button>
+          </Button>
+          <Button>
             next
-          </button>
-        </>
+          </Button>
+        </ButtonContainer>
         <PaddedBox>
           {intro && 
           <LineBlocks>
