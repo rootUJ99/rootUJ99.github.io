@@ -105,6 +105,14 @@ const Terminal = () => {
           <Circle background="#FFBD2E"/>
           <Circle background="#27C93F"/>
         </TerminalHeader>
+        <>
+          <button>
+            skip
+          </button>
+          <button>
+            next
+          </button>
+        </>
         <PaddedBox>
           {intro && 
           <LineBlocks>
