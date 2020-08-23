@@ -29674,63 +29674,28 @@ try {
           lineNumber: 106,
           columnNumber: 11
         }
-      })), /*#__PURE__*/_react.default.createElement(PaddedBox, {
+      })), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("button", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108,
-          columnNumber: 9
-        }
-      }, intro && /*#__PURE__*/_react.default.createElement(LineBlocks, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 110,
+          lineNumber: 109,
           columnNumber: 11
         }
-      }, /*#__PURE__*/_react.default.createElement(UserCol, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111,
-          columnNumber: 11
-        }
-      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+      }, "skip"), /*#__PURE__*/_react.default.createElement("button", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 112,
           columnNumber: 11
         }
-      }, "Hey there, my name is", /*#__PURE__*/_react.default.createElement(HightLight, {
+      }, "next")), /*#__PURE__*/_react.default.createElement(PaddedBox, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113,
-          columnNumber: 13
+          lineNumber: 116,
+          columnNumber: 9
         }
-      }, "Ujwal Arak"), "currently working as a Software Engineer in Symbo Insurance based in Mumbai"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-        name: "ignore-input",
-        autoFocus: true,
-        onKeyPress: () => {
-          dispatch({
-            type: 'show_skills'
-          });
-        },
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114,
-          columnNumber: 11
-        }
-      }), " ", /*#__PURE__*/_react.default.createElement("br", {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114,
-          columnNumber: 109
-        }
-      })), skills && /*#__PURE__*/_react.default.createElement(LineBlocks, {
+      }, intro && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
@@ -29751,18 +29716,67 @@ try {
           lineNumber: 120,
           columnNumber: 11
         }
-      }, "I hold knowledge in", /*#__PURE__*/_react.default.createElement(HightLight, {
+      }, "Hey there, my name is", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 121,
           columnNumber: 13
         }
+      }, "Ujwal Arak"), "currently working as a Software Engineer in Symbo Insurance based in Mumbai"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_skills'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122,
+          columnNumber: 109
+        }
+      })), skills && /*#__PURE__*/_react.default.createElement(LineBlocks, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128,
+          columnNumber: 11
+        }
+      }, "I hold knowledge in", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129,
+          columnNumber: 13
+        }
       }, "Javascript and Python"), "with frameworks like", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123,
+          lineNumber: 131,
           columnNumber: 13
         }
       }, "React, Django and Node/Express")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29776,66 +29790,17 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124,
+          lineNumber: 132,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124,
+          lineNumber: 132,
           columnNumber: 113
         }
       })), experiance && /*#__PURE__*/_react.default.createElement(LineBlocks, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 128,
-          columnNumber: 11
-        }
-      }, /*#__PURE__*/_react.default.createElement(UserCol, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 129,
-          columnNumber: 11
-        }
-      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130,
-          columnNumber: 11
-        }
-      }, "I have Worked with", /*#__PURE__*/_react.default.createElement(HightLight, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 131,
-          columnNumber: 13
-        }
-      }, "React Redux"), "for making intuitive UI/UX with data intensive applications which includes showing widgets, API integrations and dyanmic forms"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-        name: "ignore-input",
-        autoFocus: true,
-        onKeyPress: () => {
-          dispatch({
-            type: 'show_personal'
-          });
-        },
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 132,
-          columnNumber: 11
-        }
-      }), " ", /*#__PURE__*/_react.default.createElement("br", {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 132,
-          columnNumber: 111
-        }
-      })), personal && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
@@ -29856,18 +29821,67 @@ try {
           lineNumber: 138,
           columnNumber: 11
         }
-      }, "I've made some personal projects such as an Anime Rating Webapp with", /*#__PURE__*/_react.default.createElement(HightLight, {
+      }, "I have Worked with", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 139,
+          columnNumber: 13
+        }
+      }, "React Redux"), "for making intuitive UI/UX with data intensive applications which includes showing widgets, API integrations and dyanmic forms"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        autoFocus: true,
+        onKeyPress: () => {
+          dispatch({
+            type: 'show_personal'
+          });
+        },
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140,
+          columnNumber: 11
+        }
+      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140,
+          columnNumber: 111
+        }
+      })), personal && /*#__PURE__*/_react.default.createElement(LineBlocks, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 144,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 146,
+          columnNumber: 11
+        }
+      }, "I've made some personal projects such as an Anime Rating Webapp with", /*#__PURE__*/_react.default.createElement(HightLight, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 147,
           columnNumber: 11
         }
       }, "MERN stack"), "for personal use and simple quora clone using ", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140,
+          lineNumber: 148,
           columnNumber: 59
         }
       }, "Django and Vue")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29881,49 +29895,49 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141,
+          lineNumber: 149,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141,
+          lineNumber: 149,
           columnNumber: 115
         }
       })), newLearnings && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145,
+          lineNumber: 153,
           columnNumber: 11
         }
       }, /*#__PURE__*/_react.default.createElement(UserCol, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146,
+          lineNumber: 154,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147,
+          lineNumber: 155,
           columnNumber: 11
         }
       }, "I try to learn new things on regular basis for now I'm targeting Applied Machine Learning with", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148,
+          lineNumber: 156,
           columnNumber: 11
         }
       }, "Tensorflow"), "and Cross Platform App Development using", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150,
+          lineNumber: 158,
           columnNumber: 14
         }
       }, "Flutter")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29937,35 +29951,35 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152,
+          lineNumber: 160,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152,
+          lineNumber: 160,
           columnNumber: 110
         }
       })), hobbies && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156,
+          lineNumber: 164,
           columnNumber: 11
         }
       }, /*#__PURE__*/_react.default.createElement(UserCol, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157,
+          lineNumber: 165,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158,
+          lineNumber: 166,
           columnNumber: 11
         }
       }, "Other than that I'm a big Anime and Manga nerd, who also enjoys reading books and sometimes little bit of sketching"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29979,14 +29993,14 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159,
+          lineNumber: 167,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159,
+          lineNumber: 167,
           columnNumber: 110
         }
       })))) // </TerminalContainer>
