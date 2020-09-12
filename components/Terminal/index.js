@@ -1,5 +1,20 @@
-import React, {useReducer, useEffect} from 'react'
+import React, { useReducer } from 'react'
 import styled from 'styled-components';
+
+import keyboard from 'url:../../assets/keyboard.svg';
+const Icon = styled.button`
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url(${keyboard}) no-repeat;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  :active {
+    transform: scale(1.2);
+  }
+`;
 const TerminalArea = styled.div`
   background: #011627;
   color: #24a5a0ad;
@@ -68,17 +83,6 @@ const initialState = {
   newLearnings: false,
   contact: false,
 }
-const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-`;
-const Button = styled.button`
-  background: #434753;
-  color: #b4bebdad;
-  border: none;
-  margin-right: 0.2rem;
-  border-radius: 0.2rem;
-`;
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -108,6 +112,7 @@ const Terminal = () => {
     newLearnings,
     hobbies,
   }, dispatch] = useReducer(reducer, initialState)
+  
   return (
     // <TerminalContainer>
       <TerminalArea>
@@ -116,21 +121,13 @@ const Terminal = () => {
           <Circle background="#FFBD2E"/>
           <Circle background="#27C93F"/>
         </TerminalHeader>
-        <ButtonContainer>
-          <Button>
-            skip
-          </Button>
-          <Button>
-            next
-          </Button>
-        </ButtonContainer>
         <PaddedBox>
           {intro && 
           <LineBlocks>
           <UserCol>portfolio@ujwal ~ </UserCol>
           <Pre>Hey there, my name is 
             <HightLight>Ujwal Arak</HightLight>currently working as a Software Engineer in Symbo Insurance based in Mumbai</Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_skills'})}}/> <br/>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_skills'})}}/> <Icon onClick={()=>{dispatch({type: 'show_skills'})}}/><br/>
           </LineBlocks>
           }
           {skills && 
@@ -140,7 +137,7 @@ const Terminal = () => {
             <HightLight>Javascript and Python</HightLight>
              with frameworks like 
             <HightLight>React, Django and Node/Express</HightLight></Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_experiance'})}}/> <br/>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_experiance'})}}/> <Icon onClick={()=>{dispatch({type: 'show_experiance'})}}/><br/>
           </LineBlocks>
           }
           {experiance && 
@@ -148,7 +145,7 @@ const Terminal = () => {
           <UserCol>portfolio@ujwal ~ </UserCol>
           <Pre>I have Worked with 
             <HightLight>React Redux</HightLight>for making intuitive UI/UX with data intensive applications which includes showing widgets, API integrations and dyanmic forms</Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_personal'})}}/> <br/>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_personal'})}}/> <Icon onClick={()=>{dispatch({type: 'show_personal'})}}/><br/>
           </LineBlocks>
           }
           {personal && 
@@ -157,7 +154,7 @@ const Terminal = () => {
           <Pre>I've made some personal projects such as an Anime Rating Webapp with 
           <HightLight>MERN stack</HightLight>
             for personal use and simple quora clone using <HightLight>Django and Vue</HightLight></Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_newLearnings'})}}/> <br/>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_newLearnings'})}}/> <Icon onClick={()=>{dispatch({type: 'show_newLearnings'})}}/><br/>
           </LineBlocks>
           }
           {newLearnings && 
@@ -168,14 +165,14 @@ const Terminal = () => {
              and Cross Platform App Development using 
              <HightLight>Flutter</HightLight>
              </Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_hobbies'})}}/> <br/>
+          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_hobbies'})}}/> <Icon onClick={()=>{dispatch({type: 'show_hobbies'})}}/><br/>
           </LineBlocks>
           }
           {hobbies && 
           <LineBlocks>
           <UserCol>portfolio@ujwal ~ </UserCol>
           <Pre>Other than that I'm a big Anime and Manga nerd, who also enjoys reading books and sometimes little bit of sketching</Pre>
-          <InvisibleInput name="ignore-input"autoFocus onKeyPress={()=>{dispatch({type: 'show_hobbies'})}}/> <br/>
+          <InvisibleInput name="ignore-input"/> <br/>
           </LineBlocks>
           }
         </PaddedBox>
