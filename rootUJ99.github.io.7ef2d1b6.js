@@ -986,8 +986,8 @@ function hmrAcceptRun(bundle, id) {
 
   acceptedAssets[id] = true;
 }
-},{}],"4e236204584c5e0a4f04619e847ec641":[function(require,module,exports) {
-require('./bundle-manifest').register(JSON.parse("{\"5225f0fee2e1187f\":\"rootUJ99.github.io.7ef2d1b6.js\",\"0b27b2158c27a0c3\":\"profile.a9764082.jpg\",\"ecefbca0c17a168d\":\"insta.5b24f6dd.svg\",\"7d486ffcdd2bbe2e\":\"twitter.a38ed03a.svg\",\"a4354a841c505e2e\":\"github.84555f48.svg\"}"));
+},{}],"02c0947382d569e94d7e55ed0b89ed7d":[function(require,module,exports) {
+require('./bundle-manifest').register(JSON.parse("{\"5225f0fee2e1187f\":\"rootUJ99.github.io.7ef2d1b6.js\",\"bf31f55188b85f80\":\"keyboard.f36a780b.svg\",\"0b27b2158c27a0c3\":\"profile.a9764082.jpg\",\"ecefbca0c17a168d\":\"insta.5b24f6dd.svg\",\"7d486ffcdd2bbe2e\":\"twitter.a38ed03a.svg\",\"a4354a841c505e2e\":\"github.84555f48.svg\"}"));
 },{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"ba8df6b71e73837c465d69bebde6e64d":[function(require,module,exports) {
 "use strict";
 
@@ -29248,12 +29248,9 @@ try {
   padding: 2rem;
   background: #242730;
   width: 100%;
-  height: 100%;
-  @media (max-width: 640px) {
-    grid-template-rows: 1fr;
-    grid-template-columns: none;
-    height: auto;
-
+  height: 100vh;
+  @media (max-width: 640px){
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -29262,28 +29259,28 @@ try {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 22,
         columnNumber: 7
       }
     }), /*#__PURE__*/_react.default.createElement(Wrapper, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 23,
         columnNumber: 7
       }
     }, /*#__PURE__*/_react.default.createElement(_Profile.default, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 24,
         columnNumber: 9
       }
     }), /*#__PURE__*/_react.default.createElement(_Terminal.default, {
       __self: void 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 25,
         columnNumber: 9
       }
     })));
@@ -29511,6 +29508,8 @@ try {
 
   var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+  var _keyboard = _interopRequireDefault(require("url:../../assets/keyboard.svg"));
+
   var _jsxFileName = "/Users/ujwal/Desktop/UJwal/projects/rootUJ99.github.io/components/Terminal/index.js",
       _s = $RefreshSig$();
 
@@ -29520,7 +29519,20 @@ try {
 
   function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-  const TerminalArea = _c = _styledComponents.default.div`
+  const Icon = _c = _styledComponents.default.button`
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url(${_keyboard.default}) no-repeat;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: transform 0.2s;
+  transition-timing-function: ease-out;
+  :active {
+    transform: scale(1.2);
+  }
+`;
+  const TerminalArea = _c2 = _styledComponents.default.div`
   background: #011627;
   color: #24a5a0ad;
   width: 65vw;
@@ -29532,12 +29544,12 @@ try {
     width: 100%;
   }
 `;
-  const HightLight = _c2 = _styledComponents.default.span`
+  const HightLight = _c3 = _styledComponents.default.span`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   color: #877c3e;
 `;
-  const TerminalHeader = _c3 = _styledComponents.default.div`
+  const TerminalHeader = _c4 = _styledComponents.default.div`
   width: inherit;
   height: 2rem;
   /* background: blue; */
@@ -29545,7 +29557,7 @@ try {
   align-items: center;
   padding: 1rem 1rem 0.5rem 1rem;
 `;
-  const Circle = _c4 = _styledComponents.default.button`
+  const Circle = _c5 = _styledComponents.default.button`
   background: ${props => props.background || 'white'};
   border-radius: 50%;
   width: 1rem;
@@ -29553,26 +29565,26 @@ try {
   margin: 0.2rem;
   border: none;
 `;
-  const InvisibleInput = _c5 = _styledComponents.default.input`
+  const InvisibleInput = _c6 = _styledComponents.default.input`
   background: transparent;
   border: none;
   width: 0.5rem;
   outline:none;
   caret-color: #24a5a0ad;
 `;
-  const Pre = _c6 = _styledComponents.default.div`
+  const Pre = _c7 = _styledComponents.default.div`
   white-space: pre-wrap;
   display: inline;
 `;
-  const PaddedBox = _c7 = _styledComponents.default.div`
+  const PaddedBox = _c8 = _styledComponents.default.div`
   padding: 2rem;
   line-height: 1.8;
 `;
-  const UserCol = _c8 = _styledComponents.default.p`
+  const UserCol = _c9 = _styledComponents.default.p`
   color: #b4bebdad;
   display: inline;
 `;
-  const LineBlocks = _c9 = _styledComponents.default.div`
+  const LineBlocks = _c10 = _styledComponents.default.div`
   margin-bottom: 1rem;
 `;
   const initialState = {
@@ -29584,17 +29596,6 @@ try {
     newLearnings: false,
     contact: false
   };
-  const ButtonContainer = _c10 = _styledComponents.default.div`
-  display: flex;
-  flex-direction: row-reverse;
-`;
-  const Button = _c11 = _styledComponents.default.button`
-  background: #434753;
-  color: #b4bebdad;
-  border: none;
-  margin-right: 0.2rem;
-  border-radius: 0.2rem;
-`;
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -29651,14 +29652,14 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113,
+          lineNumber: 118,
           columnNumber: 7
         }
       }, /*#__PURE__*/_react.default.createElement(TerminalHeader, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114,
+          lineNumber: 119,
           columnNumber: 9
         }
       }, /*#__PURE__*/_react.default.createElement(Circle, {
@@ -29666,7 +29667,7 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115,
+          lineNumber: 120,
           columnNumber: 11
         }
       }), /*#__PURE__*/_react.default.createElement(Circle, {
@@ -29674,7 +29675,7 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116,
+          lineNumber: 121,
           columnNumber: 11
         }
       }), /*#__PURE__*/_react.default.createElement(Circle, {
@@ -29682,63 +29683,42 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117,
+          lineNumber: 122,
           columnNumber: 11
         }
-      })), /*#__PURE__*/_react.default.createElement(ButtonContainer, {
+      })), /*#__PURE__*/_react.default.createElement(PaddedBox, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119,
-          columnNumber: 9
-        }
-      }, /*#__PURE__*/_react.default.createElement(Button, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 120,
-          columnNumber: 11
-        }
-      }, "skip"), /*#__PURE__*/_react.default.createElement(Button, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 123,
-          columnNumber: 11
-        }
-      }, "next")), /*#__PURE__*/_react.default.createElement(PaddedBox, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 127,
+          lineNumber: 124,
           columnNumber: 9
         }
       }, intro && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129,
+          lineNumber: 126,
           columnNumber: 11
         }
       }, /*#__PURE__*/_react.default.createElement(UserCol, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130,
+          lineNumber: 127,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131,
+          lineNumber: 128,
           columnNumber: 11
         }
       }, "Hey there, my name is", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132,
+          lineNumber: 129,
           columnNumber: 13
         }
       }, "Ujwal Arak"), "currently working as a Software Engineer in Symbo Insurance based in Mumbai"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29752,49 +29732,61 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 130,
           columnNumber: 11
         }
-      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+      }), " ", /*#__PURE__*/_react.default.createElement(Icon, {
+        onClick: () => {
+          dispatch({
+            type: 'show_skills'
+          });
+        },
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 130,
           columnNumber: 109
+        }
+      }), /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130,
+          columnNumber: 164
         }
       })), skills && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137,
+          lineNumber: 134,
           columnNumber: 11
         }
       }, /*#__PURE__*/_react.default.createElement(UserCol, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138,
+          lineNumber: 135,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139,
+          lineNumber: 136,
           columnNumber: 11
         }
       }, "I hold knowledge in", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140,
+          lineNumber: 137,
           columnNumber: 13
         }
       }, "Javascript and Python"), "with frameworks like", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142,
+          lineNumber: 139,
           columnNumber: 13
         }
       }, "React, Django and Node/Express")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29808,42 +29800,54 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143,
+          lineNumber: 140,
           columnNumber: 11
         }
-      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+      }), " ", /*#__PURE__*/_react.default.createElement(Icon, {
+        onClick: () => {
+          dispatch({
+            type: 'show_experiance'
+          });
+        },
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143,
+          lineNumber: 140,
           columnNumber: 113
+        }
+      }), /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140,
+          columnNumber: 172
         }
       })), experiance && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147,
+          lineNumber: 144,
           columnNumber: 11
         }
       }, /*#__PURE__*/_react.default.createElement(UserCol, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148,
+          lineNumber: 145,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149,
+          lineNumber: 146,
           columnNumber: 11
         }
       }, "I have Worked with", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150,
+          lineNumber: 147,
           columnNumber: 13
         }
       }, "React Redux"), "for making intuitive UI/UX with data intensive applications which includes showing widgets, API integrations and dyanmic forms"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29857,49 +29861,61 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151,
+          lineNumber: 148,
           columnNumber: 11
         }
-      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+      }), " ", /*#__PURE__*/_react.default.createElement(Icon, {
+        onClick: () => {
+          dispatch({
+            type: 'show_personal'
+          });
+        },
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151,
+          lineNumber: 148,
           columnNumber: 111
+        }
+      }), /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148,
+          columnNumber: 168
         }
       })), personal && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155,
+          lineNumber: 152,
           columnNumber: 11
         }
       }, /*#__PURE__*/_react.default.createElement(UserCol, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156,
+          lineNumber: 153,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157,
+          lineNumber: 154,
           columnNumber: 11
         }
       }, "I've made some personal projects such as an Anime Rating Webapp with", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158,
+          lineNumber: 155,
           columnNumber: 11
         }
       }, "MERN stack"), "for personal use and simple quora clone using ", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159,
+          lineNumber: 156,
           columnNumber: 59
         }
       }, "Django and Vue")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29913,49 +29929,61 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160,
+          lineNumber: 157,
           columnNumber: 11
         }
-      }), " ", /*#__PURE__*/_react.default.createElement("br", {
+      }), " ", /*#__PURE__*/_react.default.createElement(Icon, {
+        onClick: () => {
+          dispatch({
+            type: 'show_newLearnings'
+          });
+        },
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160,
+          lineNumber: 157,
           columnNumber: 115
+        }
+      }), /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 157,
+          columnNumber: 176
         }
       })), newLearnings && /*#__PURE__*/_react.default.createElement(LineBlocks, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164,
+          lineNumber: 161,
           columnNumber: 11
         }
       }, /*#__PURE__*/_react.default.createElement(UserCol, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165,
+          lineNumber: 162,
           columnNumber: 11
         }
       }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 166,
+          lineNumber: 163,
           columnNumber: 11
         }
       }, "I try to learn new things on regular basis for now I'm targeting Applied Machine Learning with", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167,
+          lineNumber: 164,
           columnNumber: 11
         }
       }, "Tensorflow"), "and Cross Platform App Development using", /*#__PURE__*/_react.default.createElement(HightLight, {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169,
+          lineNumber: 166,
           columnNumber: 14
         }
       }, "Flutter")), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
@@ -29969,41 +29997,11 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 171,
+          lineNumber: 168,
           columnNumber: 11
         }
-      }), " ", /*#__PURE__*/_react.default.createElement("br", {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 171,
-          columnNumber: 110
-        }
-      })), hobbies && /*#__PURE__*/_react.default.createElement(LineBlocks, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 175,
-          columnNumber: 11
-        }
-      }, /*#__PURE__*/_react.default.createElement(UserCol, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 176,
-          columnNumber: 11
-        }
-      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
-        __self: void 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 177,
-          columnNumber: 11
-        }
-      }, "Other than that I'm a big Anime and Manga nerd, who also enjoys reading books and sometimes little bit of sketching"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
-        name: "ignore-input",
-        autoFocus: true,
-        onKeyPress: () => {
+      }), " ", /*#__PURE__*/_react.default.createElement(Icon, {
+        onClick: () => {
           dispatch({
             type: 'show_hobbies'
           });
@@ -30011,15 +30009,51 @@ try {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178,
+          lineNumber: 168,
+          columnNumber: 110
+        }
+      }), /*#__PURE__*/_react.default.createElement("br", {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 168,
+          columnNumber: 166
+        }
+      })), hobbies && /*#__PURE__*/_react.default.createElement(LineBlocks, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_react.default.createElement(UserCol, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 173,
+          columnNumber: 11
+        }
+      }, "portfolio@ujwal ~ "), /*#__PURE__*/_react.default.createElement(Pre, {
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174,
+          columnNumber: 11
+        }
+      }, "Other than that I'm a big Anime and Manga nerd, who also enjoys reading books and sometimes little bit of sketching"), /*#__PURE__*/_react.default.createElement(InvisibleInput, {
+        name: "ignore-input",
+        __self: void 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 175,
           columnNumber: 11
         }
       }), " ", /*#__PURE__*/_react.default.createElement("br", {
         __self: void 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178,
-          columnNumber: 110
+          lineNumber: 175,
+          columnNumber: 49
         }
       })))) // </TerminalContainer>
 
@@ -30028,30 +30062,29 @@ try {
 
   _s(Terminal, "QUkhWkaCqojVlxkn9/4nSXKI4z4=");
 
-  _c12 = Terminal;
+  _c11 = Terminal;
   var _default = Terminal;
   exports.default = _default;
 
-  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12;
+  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11;
 
-  $RefreshReg$(_c, "TerminalArea");
-  $RefreshReg$(_c2, "HightLight");
-  $RefreshReg$(_c3, "TerminalHeader");
-  $RefreshReg$(_c4, "Circle");
-  $RefreshReg$(_c5, "InvisibleInput");
-  $RefreshReg$(_c6, "Pre");
-  $RefreshReg$(_c7, "PaddedBox");
-  $RefreshReg$(_c8, "UserCol");
-  $RefreshReg$(_c9, "LineBlocks");
-  $RefreshReg$(_c10, "ButtonContainer");
-  $RefreshReg$(_c11, "Button");
-  $RefreshReg$(_c12, "Terminal");
+  $RefreshReg$(_c, "Icon");
+  $RefreshReg$(_c2, "TerminalArea");
+  $RefreshReg$(_c3, "HightLight");
+  $RefreshReg$(_c4, "TerminalHeader");
+  $RefreshReg$(_c5, "Circle");
+  $RefreshReg$(_c6, "InvisibleInput");
+  $RefreshReg$(_c7, "Pre");
+  $RefreshReg$(_c8, "PaddedBox");
+  $RefreshReg$(_c9, "UserCol");
+  $RefreshReg$(_c10, "LineBlocks");
+  $RefreshReg$(_c11, "Terminal");
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd"}],"00f29180361410c43755b2aab57c93df":[function(require,module,exports) {
+},{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","url:../../assets/keyboard.svg":"eb776b1822290df8e729393dbb5a8f22"}],"00f29180361410c43755b2aab57c93df":[function(require,module,exports) {
 'use strict';
 
 var process = require("process");
@@ -33291,7 +33324,120 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"893f1e700e250ce7006eae0b61753e83"}],"81677cc8c12dc327a6efacbe300c3562":[function(require,module,exports) {
+},{"react-is":"893f1e700e250ce7006eae0b61753e83"}],"eb776b1822290df8e729393dbb5a8f22":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "bf31f55188b85f80");
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"2146da1905b95151ed14d455c784e7b7":[function(require,module,exports) {
+"use strict";
+
+/* globals document:readonly */
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+
+
+function getOrigin(url) {
+  let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+
+  if (!matches) {
+    throw new Error('Origin not found');
+  }
+
+  return matches[0];
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+},{}],"1b9943ef25c7bbdf0dd1b9fa91880a6c":[function(require,module,exports) {
+"use strict";
+
+var resolve = require('./bundle-manifest').resolve;
+
+module.exports = function (fromId, toId) {
+  return relative(dirname(resolve(fromId)), resolve(toId));
+};
+
+function dirname(_filePath) {
+  if (_filePath === '') {
+    return '.';
+  }
+
+  var filePath = _filePath[_filePath.length - 1] === '/' ? _filePath.slice(0, _filePath.length - 1) : _filePath;
+  var slashIndex = filePath.lastIndexOf('/');
+  return slashIndex === -1 ? '.' : filePath.slice(0, slashIndex);
+}
+
+function relative(from, to) {
+  if (from === to) {
+    return '';
+  }
+
+  var fromParts = from.split('/');
+
+  if (fromParts[0] === '.') {
+    fromParts.shift();
+  }
+
+  var toParts = to.split('/');
+
+  if (toParts[0] === '.') {
+    toParts.shift();
+  } // Find where path segments diverge.
+
+
+  var i;
+  var divergeIndex;
+
+  for (i = 0; (i < toParts.length || i < fromParts.length) && divergeIndex == null; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      divergeIndex = i;
+    }
+  } // If there are segments from "from" beyond the point of divergence,
+  // return back up the path to that point using "..".
+
+
+  var parts = [];
+
+  for (i = 0; i < fromParts.length - divergeIndex; i++) {
+    parts.push('..');
+  } // If there are segments from "to" beyond the point of divergence,
+  // continue using the remaining segments.
+
+
+  if (toParts.length > divergeIndex) {
+    parts.push.apply(parts, toParts.slice(divergeIndex));
+  }
+
+  return parts.join('/');
+}
+
+module.exports._dirname = dirname;
+module.exports._relative = relative;
+},{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"81677cc8c12dc327a6efacbe300c3562":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33469,123 +33615,12 @@ try {
 }
 },{"react":"c3469d175e6ab91a6ebac2096f1b2459","styled-components":"00f29180361410c43755b2aab57c93df","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"304bfcdf97c182c258933a329c4fc1cd","url:../../assets/profile.jpg":"ed2781b2b87c0ed0ddaae500a9c30c02","url:../../assets/insta.svg":"eae1e79ffe5dc9fe56a87fe5804f4ee1","url:../../assets/twitter.svg":"44651bfcdadeba2f8196cb5961ec66b6","url:../../assets/github.svg":"a5738d8f61e6ea11728cc51987445c27"}],"ed2781b2b87c0ed0ddaae500a9c30c02":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "0b27b2158c27a0c3");
-},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"2146da1905b95151ed14d455c784e7b7":[function(require,module,exports) {
-"use strict";
-
-/* globals document:readonly */
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-
-
-function getOrigin(url) {
-  let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-
-  if (!matches) {
-    throw new Error('Origin not found');
-  }
-
-  return matches[0];
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-},{}],"1b9943ef25c7bbdf0dd1b9fa91880a6c":[function(require,module,exports) {
-"use strict";
-
-var resolve = require('./bundle-manifest').resolve;
-
-module.exports = function (fromId, toId) {
-  return relative(dirname(resolve(fromId)), resolve(toId));
-};
-
-function dirname(_filePath) {
-  if (_filePath === '') {
-    return '.';
-  }
-
-  var filePath = _filePath[_filePath.length - 1] === '/' ? _filePath.slice(0, _filePath.length - 1) : _filePath;
-  var slashIndex = filePath.lastIndexOf('/');
-  return slashIndex === -1 ? '.' : filePath.slice(0, slashIndex);
-}
-
-function relative(from, to) {
-  if (from === to) {
-    return '';
-  }
-
-  var fromParts = from.split('/');
-
-  if (fromParts[0] === '.') {
-    fromParts.shift();
-  }
-
-  var toParts = to.split('/');
-
-  if (toParts[0] === '.') {
-    toParts.shift();
-  } // Find where path segments diverge.
-
-
-  var i;
-  var divergeIndex;
-
-  for (i = 0; (i < toParts.length || i < fromParts.length) && divergeIndex == null; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      divergeIndex = i;
-    }
-  } // If there are segments from "from" beyond the point of divergence,
-  // return back up the path to that point using "..".
-
-
-  var parts = [];
-
-  for (i = 0; i < fromParts.length - divergeIndex; i++) {
-    parts.push('..');
-  } // If there are segments from "to" beyond the point of divergence,
-  // continue using the remaining segments.
-
-
-  if (toParts.length > divergeIndex) {
-    parts.push.apply(parts, toParts.slice(divergeIndex));
-  }
-
-  return parts.join('/');
-}
-
-module.exports._dirname = dirname;
-module.exports._relative = relative;
-},{"./bundle-manifest":"ba8df6b71e73837c465d69bebde6e64d"}],"eae1e79ffe5dc9fe56a87fe5804f4ee1":[function(require,module,exports) {
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"eae1e79ffe5dc9fe56a87fe5804f4ee1":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "ecefbca0c17a168d");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"44651bfcdadeba2f8196cb5961ec66b6":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "7d486ffcdd2bbe2e");
 },{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}],"a5738d8f61e6ea11728cc51987445c27":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + require('./relative-path')("5225f0fee2e1187f", "a4354a841c505e2e");
-},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}]},{},["64c1770b35b04eb343009bb27a752262","dd675bf57948b67d0f9ff864431e3b2f","4e236204584c5e0a4f04619e847ec641","eb397b394ebff17b5f4b9224cf897db4"], null)
+},{"./bundle-url":"2146da1905b95151ed14d455c784e7b7","./relative-path":"1b9943ef25c7bbdf0dd1b9fa91880a6c"}]},{},["64c1770b35b04eb343009bb27a752262","dd675bf57948b67d0f9ff864431e3b2f","02c0947382d569e94d7e55ed0b89ed7d","eb397b394ebff17b5f4b9224cf897db4"], null)
 
 //# sourceMappingURL=rootUJ99.github.io.7ef2d1b6.js.map
