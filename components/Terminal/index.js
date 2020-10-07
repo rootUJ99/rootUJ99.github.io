@@ -22,7 +22,9 @@ const TerminalArea = styled.div`
   height: 80vh;
   border-radius: 0.7rem;
   box-shadow: 20px 20px 0px 1px rgba(0,0,0,0.75);
-  overflow: scroll;
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+  
   @media (max-width: 640px) {
     width: 100%;
   }
